@@ -1,0 +1,16 @@
+{
+  "project_id": "1234",
+  "task_progress": [
+    {"task": "Design", "percent_complete": 80},
+    {"task": "Backend", "percent_complete": 20}
+  ],
+  "time_logs": [
+    {"user": "dev1", "hours": 4, "date": "2025-06-20"},
+    {"user": "dev2", "hours": 2, "date": "2025-06-20"}
+  ],
+  "communications": [
+    "Still waiting for client approval.",
+    "QA is blocked due to environment issues.",
+    "Overall things are progressing okay."
+  ]
+}
