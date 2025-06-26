@@ -23,4 +23,26 @@ def analyze_completion(task_progress):
         return "Behind"
     return "On track"
 
+def asses_health(data):
+    reasons=[]
+    health="Good"
+    sentiment=analyze_sentiment(data["communications"])
+    velocity=analyze_velocity(data["time_logs"])
+    completion= analyze_completion(data["task_progress"])
+
+    if sentiment==  'Negative':
+        reasons.append("Negative sentiment")
+    if velocity == "Low":
+        reasons.append("Low velocity")
+    if completion == "Behind":
+        reasons.append("Tasks behind schedule")
+
+    if len(reasons) >= 2:
+        health = "At Risk"
+    elif len(reasons) == 1:
+        health = "Medium"
+
+    return {"health": health, "reasons": reasons}
+
+
     
